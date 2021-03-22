@@ -2,11 +2,8 @@ import javax.swing.JOptionPane;
 
 public class MaiusculaOuMinuscula {
     public static void main(String[] args) {
-        //Declaração de variavel
-        String caractere;
-
-        //Coleta de dados
-        caractere = JOptionPane.showInputDialog("Insira o caractere: ");
+        //Declaração de variavel e Coleta de dados
+        String caractere = JOptionPane.showInputDialog("Insira o caractere: ");
 
         if (caractere.length() == 1) {
             if (caractere.matches("^[a-z]")) {

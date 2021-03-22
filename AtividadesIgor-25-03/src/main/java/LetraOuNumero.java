@@ -11,10 +11,10 @@ public class LetraOuNumero {
         //Verificacao para ver se o usuario inseriu mais de um caractere
         if (caractere.length() == 1) {
             if (caractere.matches("^[0-9]")) { //método matches faz a verificação se é um numero
-                JOptionPane.showMessageDialog(null, caractere+" = NUMERO");
+                JOptionPane.showMessageDialog(null, "NUMERO");
             }
             else {
-                JOptionPane.showMessageDialog(null, caractere+" = LETRA");
+                JOptionPane.showMessageDialog(null, "LETRA");
             }
         }
         else {
