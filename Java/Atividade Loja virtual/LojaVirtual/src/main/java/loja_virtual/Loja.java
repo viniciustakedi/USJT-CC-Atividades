@@ -15,7 +15,8 @@ public class Loja {
         //Parte inicial do sistema, cadastro de usuario e apresentacao
         int escolha = Integer.parseInt(JOptionPane.showInputDialog("{======* Bem-vindo à loja virtual *======}\n"
                 + " Cadastre-se para poder acessar a loja!\n\r"
-                + "1 - Cadastrar-se\n"
+                + "1 - Cadastrar-se como usuario\n"
+                + "2 - Login ADM\n"
                 + "0 - Sair\n\r"
                 + "Insira a opcao desejada: "));
 
@@ -32,9 +33,38 @@ public class Loja {
                 System.out.println(cliente.getDados());
 
                 break;
+            case 2:
+                //Cadastrar produto
+                int countProduct = 1;
+                while (countProduct != 0) {
 
-            //Caso o usuario escolha sair
-            case 0:
+                    countProduct = Integer.parseInt(JOptionPane.showInputDialog("{======* Escolha uma opcao *======}\n\r"
+                            + "1 - Cadastrar produto\n"
+                            + "0 - Sair\n\r"
+                            + "Insira a opcao desejada: "));
+
+                    if (countProduct == 1) {
+                        JOptionPane.showMessageDialog(null, "Cadastrar produto");
+                        String prod = JOptionPane.showInputDialog("Produto");
+                        String preco = JOptionPane.showInputDialog("Preco: ");
+                        String qntEstoque = JOptionPane.showInputDialog("Quantidade estoque: ");
+
+                        int idP = produto.getIdProduto();
+                        int p = idP + 1;
+
+                        produto.cadastrarProduto(prod, preco, qntEstoque, p);
+                    } else {
+                        countProduct = 0;
+                        JOptionPane.showMessageDialog(null, "Saindo...");
+                    }
+                    System.out.println(produto.getIdProduto());
+                    break;
+                    //Caso o usuario escolha sair
+                
+        
+    
+
+case 0:
                 JOptionPane.showMessageDialog(null, "Até logo!! Saindo...");
 
                 break;
@@ -46,13 +76,7 @@ public class Loja {
         }
         //Segunda parte boas vindas e usuario pode 
 
-        //Cadastrar produto
-        JOptionPane.showMessageDialog(null, "Cadastrar produto");
-        String prod = JOptionPane.showInputDialog("Produto");
-        String preco = JOptionPane.showInputDialog("Preco: ");
-        String qntEstoque = JOptionPane.showInputDialog("Quantidade estoque: ");
-        produto.cadastrarProduto(prod, preco, qntEstoque);
-        System.out.println(produto.getProduto());
 
+        }
     }
 }
